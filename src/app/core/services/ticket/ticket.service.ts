@@ -14,8 +14,9 @@ export class TicketService {
   } */
 
   addTicket(data: any): Observable<any>{
+    //http://localhost:8080/api/TuCine/v1/tickets
     return this._http.post('https://backend-tucine-production.up.railway.app/api/TuCine/v1/tickets',data);
-  } 
+  }
 
 
 }

@@ -8,8 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CategoryService {
 
-  private apiURL="http://localhost:3000/Category";
-
+  //http://localhost:8080/api/TuCine/v1/categories
   private apiBackend="https://backend-tucine-production.up.railway.app/api/TuCine/v1/categories";
 
   public categoriesList:Category[]=[];

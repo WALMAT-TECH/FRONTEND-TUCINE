@@ -9,7 +9,7 @@ import { Business } from 'src/app/core/models/cineclub.model';
 export class CineclubService {
 
   public moviesList:Business[]=[]
-  private apiURL="http://localhost:3000/Business"
+  //http://localhost:8080/api/TuCine/v1/businesses
   private apiBackend="https://backend-tucine-production.up.railway.app/api/TuCine/v1/businesses";
   constructor(private http: HttpClient) {
     this.getCineclubs()
@@ -20,9 +20,9 @@ export class CineclubService {
   }
 
   public getCineclubById(id: number): Observable<any> {
-    return this.http.get<any>(`${this.apiURL}/${id}`);
+    return this.http.get<any>(`${this.apiBackend}/${id}`);
   }
-  
+
   public searchCineclubs(title: string, cineclubs: Business[]): Business[] {
 
     return cineclubs.filter(cineclub => cineclub.name.toLowerCase().includes(title.toLowerCase()));

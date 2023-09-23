@@ -11,10 +11,7 @@ export class FilmService {
 
   public FilmList:Film[]=[]
 
-  //private apiURL="http://localhost:3000/movies"
-
-  private apiURL="http://localhost:3000/Film";
-
+  //http://localhost:8080/api/TuCine/v1/films
   private apiBackend= "https://backend-tucine-production.up.railway.app/api/TuCine/v1/films";
 
   constructor(private http:HttpClient) {

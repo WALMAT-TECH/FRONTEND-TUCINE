@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BusinessTypesService {
+
+  //http://localhost:8080/api/TuCine/v1/businessTypes
   private apiURL="http://localhost:3000/BusinessType";
 
   public businessTypesList:BusinessType[]=[];
