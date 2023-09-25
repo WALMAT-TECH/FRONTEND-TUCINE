@@ -9,8 +9,8 @@ import { Person } from 'src/app/core/models/person.model';
 })
 export class PersonService {
   public personsList:Person[]=[]
-  //http://localhost:8080/api/TuCine/v1/persons
-  private apiURL="https://backend-tucine-production.up.railway.app/api/TuCine/v1/persons"
+
+  private apiURL="http://localhost:8080/api/TuCine/v1/persons"
   constructor(private http: HttpClient) {
     this.getPersons()
    }
