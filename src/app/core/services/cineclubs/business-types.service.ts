@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class BusinessTypesService {
 
   //http://localhost:8080/api/TuCine/v1/businessTypes
-  private apiURL="http://localhost:3000/BusinessType";
+  private apiURL="http://localhost:8080/api/TuCine/v1/businessTypes";
 
   public businessTypesList:BusinessType[]=[];
 
@@ -38,6 +38,3 @@ export class BusinessTypesService {
   }
 
 }
-
-
-

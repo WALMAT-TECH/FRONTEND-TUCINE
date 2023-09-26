@@ -9,8 +9,8 @@ import { Business } from 'src/app/core/models/cineclub.model';
 export class CineclubService {
 
   public moviesList:Business[]=[]
-  //http://localhost:8080/api/TuCine/v1/businesses
-  private apiBackend="https://backend-tucine-production.up.railway.app/api/TuCine/v1/businesses";
+
+  private apiBackend="http://localhost:8080/api/TuCine/v1/businesses";
   constructor(private http: HttpClient) {
     this.getCineclubs()
    }
