@@ -9,19 +9,21 @@ export class PopularPostService {
 
   constructor(private _http: HttpClient) {}
 
+  //localUrl = 'http://localhost:8080/api/TuCine/v1/';
+  prodUrl= 'https://backend-tucine-production.up.railway.app/api/TuCine/v1/';
   addPopularPost(data: any): Observable<any>{
-    return this._http.post('http://localhost:3000/popular-post',data);
+    return this._http.post(this.prodUrl+'popular-post',data);
   }
 
   updatePopularPost(id: number, data: any): Observable<any>{
-    return this._http.put(`http://localhost:3000/popular-post/${id}`,data);
+    return this._http.put(this.prodUrl+`popular-post/${id}`,data);
   }
 
   getPopularPostList(): Observable<any>{
-    return this._http.get('http://localhost:3000/popular-post');
+    return this._http.get(this.prodUrl+'popular-post');
   }
 
   deletePopularPost(id: number): Observable<any>{
-    return this._http.delete(`http://localhost:3000/popular-post/${id}`)
+    return this._http.delete(this.prodUrl+`popular-post/${id}`)
   }
 }

@@ -10,89 +10,62 @@ export class FilmsProfileService {
 
   constructor(private _http: HttpClient) {}
 
+  localUrl = 'http://localhost:8080/api/TuCine/v1/';
+  prodUrl= 'https://backend-tucine-production.up.railway.app/api/TuCine/v1/';
   addMovieProfile(data: any): Observable<any>{
-
-    //http://localhost:8080/api/TuCine/v1/films
-    return this._http.post('https://backend-tucine-production.up.railway.app/api/TuCine/v1/films',data);
+    return this._http.post(this.prodUrl+'films',data);
   }
 
   updateMovieProfile(id: number, data: any): Observable<any>{
-
-    //http://localhost:8080/api/TuCine/v1/films/${id}
-    return this._http.put(`https://backend-tucine-production.up.railway.app/api/TuCine/v1/films/${id}`,data); //Falta implementar
+    return this._http.put(this.prodUrl+`films/${id}`,data); //Falta implementar
   }
 
   getMovieListProfile(): Observable<any>{
-
-    //http://localhost:8080/api/TuCine/v1/films
-    return this._http.get('https://backend-tucine-production.up.railway.app/api/TuCine/v1/films');
+    return this._http.get(this.prodUrl+'films');
   }
 
   getMoviebyId(id: number): Observable<any>{
-
-    //http://localhost:8080/api/TuCine/v1/films/${id}
-    return this._http.get(`https://backend-tucine-production.up.railway.app/api/TuCine/v1/films/${id}`);
+    return this._http.get(this.prodUrl+`films/${id}`);
   }
 
   deleteMovieProfile(id: number): Observable<any>{
-
-    //http://localhost:8080/api/TuCine/v1/films/${id}
-    return this._http.delete(`http://localhost:3000/Film/${id}`)
+    return this._http.delete(this.prodUrl+`Film/${id}`)
   }
-
   //Showtimes
   getShowtimesbyFilmId(id: number): Observable<any>{
-
-    http://localhost:8080/api/TuCine/v1/films/${id}/showtimes
-    return this._http.get(`https://backend-tucine-production.up.railway.app/api/TuCine/v1/films/${id}/showtimes`);
+    return this._http.get(this.prodUrl+`films/${id}/showtimes`);
   }
 
   getBusinessById(id: number): Observable<any> {
-
-    //http://localhost:8080/api/TuCine/v1/businesses/${id}
-    return this._http.get(`https://backend-tucine-production.up.railway.app/api/TuCine/v1/businesses/${id}`);
+    return this._http.get(this.prodUrl+`businesses/${id}`);
   }
 
   getBusinessTypeById(id: number): Observable<any> {
-
-    //http://localhost:8080/api/TuCine/v1/businessTypes/${id}
-    return this._http.get(`https://backend-tucine-production.up.railway.app/api/TuCine/v1/businessTypes/${id}`);
+    return this._http.get(this.prodUrl+`businessTypes/${id}`);
   }
 
   getBusiness(): Observable<any[]>{
-
-    //http://localhost:8080/api/TuCine/v1/businesses
-    return this._http.get<any[]>('https://backend-tucine-production.up.railway.app/api/TuCine/v1/businesses');
+    return this._http.get<any[]>(this.prodUrl+'businesses');
   }
 
   getBusinessType(): Observable<any[]>{
-
-    //http://localhost:8080/api/TuCine/v1/businessTypes
-    return this._http.get<any[]>('https://backend-tucine-production.up.railway.app/api/TuCine/v1/businessTypes');
+    return this._http.get<any[]>(this.prodUrl+'businessTypes');
   }
 
   getShowtimebyId(id: number): Observable<any>{
-
-    //http://localhost:8080/api/TuCine/v1/showtimes/${id}
-    return this._http.get(`https://backend-tucine-production.up.railway.app/api/TuCine/v1/showtimes/${id}`);
+    return this._http.get(this.prodUrl+`showtimes/${id}`);
   }
 
   getFilmActorbyFilmId(id: number): Observable<any>{
-
-    //http://localhost:8080/api/TuCine/v1/films/${id}/actors
-    return this._http.get(`https://backend-tucine-production.up.railway.app/api/TuCine/v1/films/${id}/actors`);
+    return this._http.get(this.prodUrl+`films/${id}/actors`);
   }
 
   getActorList(): Observable<any[]>{
-
-    //http://localhost:8080/api/TuCine/v1/actors
-    return this._http.get<any[]>('https://backend-tucine-production.up.railway.app/api/TuCine/v1/actors');
+    return this._http.get<any[]>(this.prodUrl+'actors');
   }
 
   getCineclubById(id: number): Observable<any>{
-
-    //http://localhost:8080/api/TuCine/v1/businesses/${id}
-    return this._http.get(`https://backend-tucine-production.up.railway.app/api/TuCine/v1/businesses/${id}`);
+    return this._http.get(this.prodUrl+`businesses/${id}`);
   }
 
 }

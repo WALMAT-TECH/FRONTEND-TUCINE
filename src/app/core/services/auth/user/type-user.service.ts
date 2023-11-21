@@ -9,7 +9,8 @@ import { Observable } from 'rxjs';
 export class TypeUserService {
 
 
-  private apiURL="http://localhost:8080/api/TuCine/v1/typeUsers";
+  private localHostURL="http://localhost:8080/api/TuCine/v1/typeUsers";
+  private apiURL="https://backend-tucine-production.up.railway.app/api/TuCine/v1/typeUsers";
 
   public personsList:TypeUser[]=[];
   constructor(private http: HttpClient) {

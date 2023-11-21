@@ -31,10 +31,10 @@ export class RegisterComponent implements OnInit {
     phone: '',
     email: '',
     password: '',
-    Gender_id: {
+    gender: {
       id: 0,
     },
-    TypeUser_id: {
+    typeUser: {
       id: 1,
     }
   }
@@ -73,7 +73,7 @@ export class RegisterComponent implements OnInit {
       { validator: this.passwordMatchValidator }
     );
   }
-  
+
   ngOnInit(){
     this.getUserGender();
   }
@@ -91,16 +91,17 @@ export class RegisterComponent implements OnInit {
       this.person.phone = formValue.phone;
       this.person.email = formValue.email;
       this.person.password = formValue.password;
-      this.person.Gender_id!.id= formValue.Gender_id;
+      this.person.gender!.id= formValue.Gender_id;
+
+      console.log(this.person)
 
       this._empService.addPerson(this.person).subscribe({
+
         next: (addedPerson:any) =>{
 
           const customerId = addedPerson.id;
-
           const customer: Customer = {
-            id: null,
-            Person_id: {
+            person: {
               id: customerId
             }
           };
@@ -114,12 +115,12 @@ export class RegisterComponent implements OnInit {
               console.error(error);
             }
           });
-          
+
         },
         error: (err:any)=>{
           console.error(err);
         }
-      })    
+      })
     }
   }
 
@@ -137,15 +138,15 @@ export class RegisterComponent implements OnInit {
   passwordMatchValidator: ValidatorFn = (control: AbstractControl) => {
     const password = control.get('password');
     const confirmPassword = control.get('confirmPassword');
-  
+
     if (password?.value !== confirmPassword?.value) {
       confirmPassword?.setErrors({ mismatch: true });
     } else {
       confirmPassword?.setErrors(null);
     }
-  
+
     return null;
   };
-  
+
 
 }

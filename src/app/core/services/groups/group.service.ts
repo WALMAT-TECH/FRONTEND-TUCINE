@@ -12,7 +12,7 @@ export class GroupService {
   public groupList:Group[]=[]
 
   //http://localhost:8080/api/TuCine/v1/groups
-  private apiURL="http://localhost:3000/Group"
+  private apiURL= "https://backend-tucine-production.up.railway.app/api/TuCine/v1/groups";
   constructor(private http:HttpClient) {
     this.getGroups()
   }

@@ -10,19 +10,19 @@ export interface Person{
     id?: any;
     firstName?: string;
     lastName?: string;
-    Gender_id?: Gender;
+    gender?: Gender;
     numberDni?: string;
     birthdate?: string;
     photo?: string;
     phone?: string;
     email?: string;
     password?: string;
-    TypeUser_id?: TypeUser;
+    typeUser?: TypeUser;
 }
 
 export interface Customer {
     id?: any;
-    Person_id?: Person
+    person?: Person
 }
 
 export interface Owner {

@@ -9,19 +9,21 @@ export class PopularNowService {
 
   constructor(private _http: HttpClient) {}
 
+  //localUrl = 'http://localhost:8080/api/TuCine/v1/';
+  prodUrl= 'https://backend-tucine-production.up.railway.app/api/TuCine/v1/';
   addPopularEventNow(data: any): Observable<any>{
-    return this._http.post('http://localhost:3000/popular-now',data);
+    return this._http.post(this.prodUrl+'popular-now',data);
   }
 
   updatePopularEventNow(id: number, data: any): Observable<any>{
-    return this._http.put(`http://localhost:3000/popular-now/${id}`,data);
+    return this._http.put(this.prodUrl+`popular-now/${id}`,data);
   }
 
   getPopularEventNowList(): Observable<any>{
-    return this._http.get('http://localhost:3000/popular-now');
+    return this._http.get(this.prodUrl+'popular-now');
   }
 
   deletePopularEventNow(id: number): Observable<any>{
-    return this._http.delete(`http://localhost:3000/popular-now/${id}`)
+    return this._http.delete(this.prodUrl+`popular-now/${id}`)
   }
 }

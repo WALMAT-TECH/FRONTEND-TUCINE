@@ -8,43 +8,43 @@ import { Person } from 'src/app/core/models/user-profile.model';
 })
 export class CinephileProfileService {
 
+  basicUrlLocalhost = 'http://localhost:8080/api/TuCine/v1/';
+  prodUrl= 'https://backend-tucine-production.up.railway.app/api/TuCine/v1/';
   constructor(private _http: HttpClient) {}
 
   //General
   addPerson(data: Person): Observable<any>{
 
-    return this._http.post('http://localhost:8080/api/TuCine/v1/persons',data);
+    return this._http.post(this.prodUrl+'persons',data);
   }
 
   getPersonList(): Observable<any>{
-    return this._http.get('http://localhost:8080/api/TuCine/v1/persons');
+    return this._http.get(this.prodUrl+'persons');
   }
 
   getUserGender(): Observable<any>{
-    return this._http.get('http://localhost:8080/api/TuCine/v1/genders');
+    return this._http.get(this.prodUrl+'genders');
   }
 
   //Customer
   addCustomer(data: any): Observable<any>{
-    return this._http.post('http://localhost:8080/api/TuCine/v1/customers',data);
+    return this._http.post(this.prodUrl+'customers',data);
   }
 
 
   getCustomerList(): Observable<any>{
-    return this._http.get('http://localhost:8080/api/TuCine/v1/customers');
+    return this._http.get(this.prodUrl+'customers');
   }
 
   getBusinessTypeList(): Observable<any>{
-    return this._http.get('http://localhost:8080/api/TuCine/v1/businessTypes');
+    return this._http.get(this.prodUrl+'businessTypes');
   }
-
-
   addOwner(data: any): Observable<any>{
-    return this._http.post('http://localhost:8080/api/TuCine/v1/owners',data);
+    return this._http.post(this.prodUrl+'owners',data);
   }
 
   addBusiness(data: any):Observable<any>{
-    return this._http.post('http://localhost:8080/api/TuCine/v1/businesses',data);
+    return this._http.post(this.prodUrl+'businesses',data);
   }
 
   validateCredentials(email: string, password: string): Observable<any>{

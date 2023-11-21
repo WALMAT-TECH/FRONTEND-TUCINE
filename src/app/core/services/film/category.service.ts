@@ -10,7 +10,6 @@ export class CategoryService {
 
   //http://localhost:8080/api/TuCine/v1/categories
   private apiBackend="https://backend-tucine-production.up.railway.app/api/TuCine/v1/categories";
-
   public categoriesList:Category[]=[];
 
   constructor(private http: HttpClient) {

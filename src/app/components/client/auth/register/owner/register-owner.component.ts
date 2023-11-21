@@ -123,7 +123,7 @@ export class RegisterOwnerComponent implements OnInit {
         id: null,
         firstName: this.firstFormGroup.get('first_name')?.value as string,
         lastName: this.firstFormGroup.get('last_name')?.value as string,
-        Gender_id:{
+        gender:{
             id: this.firstFormGroup.get('Gender_id')?.value as unknown as number
         },
         numberDni: this.firstFormGroup.get('number_dni')?.value as string,
@@ -131,7 +131,7 @@ export class RegisterOwnerComponent implements OnInit {
         phone: this.firstFormGroup.get('phone')?.value as string,
         email: this.fourthFormGroup.get('email')?.value,
         password: this.fourthFormGroup.get('password')?.value,
-        TypeUser_id: {
+        typeUser: {
           id: 2,
         }
       }

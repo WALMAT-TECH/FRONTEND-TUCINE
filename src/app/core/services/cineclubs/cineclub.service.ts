@@ -10,7 +10,8 @@ export class CineclubService {
 
   public moviesList:Business[]=[]
 
-  private apiBackend="http://localhost:8080/api/TuCine/v1/businesses";
+  private localHostURL="http://localhost:8080/api/TuCine/v1/businesses"
+  private apiBackend="https://backend-tucine-production.up.railway.app/api/TuCine/v1/businesses";
   constructor(private http: HttpClient) {
     this.getCineclubs()
    }
